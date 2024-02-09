@@ -3,13 +3,13 @@ import './App.css';
 import questions from './data/questionsData';
 
 function App() {
-  const [selectedId, setSelectedId] = React.useState(null);
+  const [selectedId, setSelectedId] = useState(null);
 
   function handleCardClick(id) {
-    setSelectedId(id);
+    setSelectedId(id !== selectedId ? id : null);
   }
   return (
-    <div className="flashcards">
+    <div className="flashcards" role="list">
       {questions.map((question) => (
         <div
           key={question.id}
