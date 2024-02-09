@@ -5,9 +5,9 @@ import questions from './data/questionsData';
 function App() {
   const [selectedId, setSelectedId] = useState(null);
 
-  function handleCardClick(id) {
-    setSelectedId(id !== selectedId ? id : null);
-  }
+  const handleCardClick = (id) => {
+    setSelectedId((prevId) => (id !== prevId ? id : null));
+  };
   return (
     <div className="flashcards" role="list">
       {questions.map((question) => (
